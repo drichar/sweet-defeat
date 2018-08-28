@@ -1,3 +1,30 @@
+// Sweet Defeat palette
+$sd-blue: #15BDE8;
+$sd-green: #93D500;
+$sd-gray-light: #BBB;
+$sd-gray-dark: #666;
+$sd-waves: #BFEDF8;
+$sd-melon: #FF584C;
+$sd-squash: #FFC800;
+$sd-carrot: #FAA21B;
+
+$sd-blue-1: #E9F9FC;
+$sd-blue-2: #D4F3FA;
+$sd-blue-3: #BFEDF8;
+$sd-blue-4: #A9E7F6;
+$sd-blue-5: #94E1F4;
+$sd-blue-6: #7FDBF2;
+$sd-blue-7: #6AD5F0;
+$sd-blue-8: #54CFEE;
+
+$primary: $sd-blue;
+$secondary: $sd-melon;
+$font-family-sans-serif: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
 @import '../../../node_modules/bootstrap/scss/bootstrap';
 
+@import 'mixins';
+
 @import 'main';
+@import 'hero-xs';
+@import 'hero';
