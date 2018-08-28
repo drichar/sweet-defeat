@@ -1,0 +1,29 @@
+.sd-order-form {
+  width: 20em;
+  background: #fafafa;
+  padding: 1.5rem;
+  display: none !important;
+
+  @include breakpoint(75em) {
+    display: block !important;
+    position: absolute;
+    top: 15em;
+    right: 2em;
+  }
+
+  @include breakpoint(80em) {
+    right: 8em;
+  }
+
+  @include breakpoint(90em) {
+    right: 13em;
+  }
+
+  @include breakpoint(100em) {
+    right: 20em;
+  }
+
+  @include breakpoint(110em) {
+    right: 25em;
+  }
+}
