@@ -1,0 +1,62 @@
+.sd-cta {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, #15bde8 0%,#0e7d9a 100%);
+
+  .container {
+    display: grid;
+    grid-template: auto / 1fr;
+
+    @include breakpoint(36em) {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h2 {
+      color: white;
+      font-weight: 700;
+      line-height: 1;
+      font-size: 3rem;
+
+      @include breakpoint(36em) {
+        font-size: 3.5rem;
+      }
+
+      @include breakpoint(48em) {
+        font-size: 4rem;
+      }
+
+      strong {
+        font-size: 150%;
+      }
+    }
+
+    button {
+      margin-top: 0.5rem;
+      transform-origin: top left;
+
+      @include breakpoint(80em) {
+        transform: scale(1.2);
+      }
+
+      @include breakpoint(100em) {
+        transform: scale(1.5);
+      }
+    }
+
+    .sd-cta-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(36em) {
+        justify-content: flex-end;
+      }
+
+      img {
+        transform: rotate(10deg);
+      }
+    }
+  }
+}
