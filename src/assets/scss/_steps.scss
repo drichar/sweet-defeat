@@ -1,0 +1,80 @@
+.sd-steps {
+  background: $sd-blue;
+
+  .container {
+    padding: 0;
+  }
+
+  .sd-steps-grid {
+    display: grid;
+    grid-template: auto / 1fr;
+
+    @include breakpoint(48em) {
+      grid-template: auto / repeat(2, 1fr);
+    }
+
+    @include breakpoint(62em) {
+      grid-template: auto / repeat(4, 1fr);
+    }
+
+    .sd-steps-cell {
+      min-height: 20rem;
+      color: white;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+
+      @include breakpoint(62em) {
+        min-height: 17rem;
+      }
+
+      @include breakpoint(100em) {
+        min-height: 20rem;
+      }
+
+      &.sd-steps-step1 {
+        background: $sd-blue;
+
+        h2 {
+          font-weight: 700;
+        }
+      }
+
+      &.sd-steps-step2 {
+        background: $sd-blue-8;
+      }
+
+      &.sd-steps-step3 {
+        background: $sd-blue-7;
+      }
+
+      &.sd-steps-step4 {
+        background: $sd-blue-6;
+      }
+
+      &.sd-steps-step2,
+      &.sd-steps-step3,
+      &.sd-steps-step4 {
+        img {
+          height: 7rem;
+          margin-bottom: 1rem;
+        }
+
+        h2 {
+          text-align: center;
+          height: 4rem;
+
+          @include breakpoint(62em) {
+            font-size: 1.5rem;
+          }
+
+          @include breakpoint(100em) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
