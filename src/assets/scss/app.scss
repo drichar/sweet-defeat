@@ -25,4 +25,7 @@ $font-family-sans-serif: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe
 
 @import 'mixins';
 
+@import 'global';
+@import 'header';
 @import 'main';
+@import 'footer';
