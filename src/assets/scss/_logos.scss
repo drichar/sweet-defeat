@@ -1,0 +1,33 @@
+.sd-logos {
+  .container {
+    padding: 3rem 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(48em) {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img {
+      height: 2.5rem;
+      margin: 1rem;
+
+      @include breakpoint(48em) {
+        height: 2rem;
+      }
+
+      @include breakpoint(62em) {
+        height: 2.5rem;
+      }
+
+      @include breakpoint(80em) {
+        height: 3rem;
+      }
+    }
+  }
+}
