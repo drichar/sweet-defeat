@@ -1,0 +1,63 @@
+.sd-product-shot {
+  padding: 4rem 0;
+  background: $gray-200;
+  color: $gray-600;
+
+  .sd-product-grid {
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 1.5rem 3rem;
+
+    .sd-product-cell {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    @include breakpoint(48em) {
+      grid-template: auto / 1fr 1fr;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+
+    @include breakpoint(80em) {
+      font-size: 2.5rem;
+    }
+
+    @include breakpoint(100em) {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+
+    span {
+      white-space: nowrap;
+    }
+
+    @include breakpoint(80em) {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint(100em) {
+      font-size: 2rem;
+    }
+  }
+
+  button {
+    margin-top: 0.5rem;
+    transform-origin: top left;
+
+    @include breakpoint(80em) {
+      transform: scale(1.2);
+    }
+
+    @include breakpoint(100em) {
+      transform: scale(1.5);
+    }
+  }
+}
