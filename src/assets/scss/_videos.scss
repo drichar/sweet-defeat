@@ -1,0 +1,74 @@
+.sd-videos {
+  padding: 4rem 0;
+
+  h2 {
+    color: $sd-blue;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    span {
+      white-space: nowrap;
+    }
+
+    @include breakpoint(23em) {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint(48em) {
+      font-size: 4vw;
+    }
+
+    @include breakpoint(62em) {
+      font-size: 3.75vw;
+    }
+
+    @include breakpoint(80em) {
+      font-size: 3.375vw;
+    }
+  }
+
+  .sd-videos-grid {
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 1.5rem 3rem;
+
+    @include breakpoint(48em) {
+      grid-template: auto / 1fr 1fr;
+    }
+  }
+}
+
+$sd-play-button-sm: 5rem;
+$sd-play-button-lg: 6rem;
+
+.sd-videos-cell {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: url('../../assets/img/play.svg');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$sd-play-button-sm/2;
+    margin-left: -$sd-play-button-sm/2;
+    width: $sd-play-button-sm;
+    height: $sd-play-button-sm;
+    transition: transform 0.15s cubic-bezier(0.42, 0, 0.58, 1);
+
+    @include breakpoint(80em) {
+      margin-top: -$sd-play-button-lg/2;
+      margin-left: -$sd-play-button-lg/2;
+      width: $sd-play-button-lg;
+      height: $sd-play-button-lg;
+    }
+  }
+
+  &:hover {
+    &::after {
+      transform: scale(1.05);
+    }
+  }
+}
