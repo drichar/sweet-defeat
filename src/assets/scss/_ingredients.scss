@@ -1,0 +1,13 @@
+.sd-ingredients {
+  padding: 4rem 0;
+
+  .container {
+    // TEMP: For demo only
+    display: flex;
+    justify-content: flex-start;
+
+    img {
+      max-height: 30em;
+    }
+  }
+}
