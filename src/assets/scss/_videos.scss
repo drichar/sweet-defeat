@@ -27,6 +27,10 @@
     @include breakpoint(80em) {
       font-size: 3.375vw;
     }
+
+    @include breakpoint(120em) {
+      font-size: 4rem;
+    }
   }
 
   .sd-videos-grid {
