@@ -1,24 +1,25 @@
 .sd-hero {
   padding: 6rem 0 3rem;
-  background: radial-gradient(ellipse at center, rgba($sd-blue-2,1) 0%,rgba($sd-blue-4,1) 100%);
+  background: radial-gradient(ellipse at center, rgba($sd-blue-1,1) 0%,rgba($sd-blue-4,1) 100%);
 
-  @include breakpoint(48em) {
+  @include breakpoint(64em) {
     background: $gray-100 url('../../assets/img/hero.jpg') center center;
     background-size: cover;
   }
 
   @include breakpoint(62em) {
     padding: 3rem 0;
+    min-height: 100vh;
   }
 
   @include breakpoint(80em) {
-    min-height: 100vh;
     display: flex;
     align-items: center;
   }
 
   .container {
     @include breakpoint(62em) {
+      padding: 0 1.5rem;
       max-width: 100em;
     }
   }
@@ -30,6 +31,11 @@
 
     @include breakpoint(62em) {
       grid-template: auto / 1fr auto;
+      margin-bottom: 1rem;
+    }
+
+    @include breakpoint(80em) {
+      margin-bottom: 5rem;
     }
   }
 
@@ -41,14 +47,18 @@
   }
 
   .sd-hero-grid-form {
+    display: flex;
+    align-items: center;
+
     .sd-form {
       display: grid;
       grid-template: auto 1fr / 1fr;
+      width: 100%;
       max-width: 32rem;
       margin: 0 auto;
 
       .sd-form-topper {
-        background: $primary;
+        background: linear-gradient(to bottom, $sd-blue 0%, darken($sd-blue, 8%) 100%);
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
         display: flex;
@@ -58,8 +68,26 @@
 
         h4 {
           color: white;
+          font-weight: 700;
           text-transform: uppercase;
+          text-shadow: 1px 1px 1px hsla(0,0,0,0.5);
           margin: 0;
+
+          @include breakpoint(23em) {
+            font-size: 2rem;
+          }
+
+          @include breakpoint(48em) {
+            font-size: 2.25rem;
+          }
+
+          @include breakpoint(62em) {
+            font-size: 1.75rem;
+          }
+
+          @include breakpoint(100em) {
+            font-size: 2rem;
+          }
         }
       }
 
@@ -67,24 +95,69 @@
         background-color: #eee;
         padding: 1rem;
 
-        @include breakpoint(80em) {
+        @include breakpoint(62em) {
           width: 20rem;
+        }
+
+        @include breakpoint(100em) {
+          width: 24rem;
+        }
+
+        ::placeholder {
+          opacity: 0.75;
         }
 
         .btn {
           text-transform: uppercase;
+          font-size: 1.5rem;
           font-weight: 700;
+          padding-left: 0;
+          padding-right: 0;
+
+          @include breakpoint(23em) {
+            font-size: 2rem;
+            border-radius: 0.5rem;
+          }
+
+          @include breakpoint(48em) {
+            font-size: 2.25rem;
+          }
+
+          @include breakpoint(62em) {
+            font-size: 1.75rem;
+          }
+
+          @include breakpoint(100em) {
+            font-size: 2rem;
+          }
         }
       }
+    }
+  }
+
+  .sd-logo {
+    width: 7rem;
+    margin-bottom: 3rem;
+    display: none;
+
+    @include breakpoint(62em) {
+      display: block;
     }
   }
 
   h1 {
     color: white;
     font-weight: 700;
-    margin-bottom: 10vh;
     text-align: center;
+    width: 100%;
     font-size: 6.5vh;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+
+    &.last {
+      margin-bottom: 2rem;
+    }
 
     @include breakpoint(32em) {
       font-size: 9vw;
@@ -92,16 +165,34 @@
 
     @include breakpoint(48em) {
       font-size: 7vw;
+    }
+
+    @include breakpoint(62em) {
       text-align: left;
+
+      &.last {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @include breakpoint(80em) {
+      &.last {
+        margin-bottom: 2rem;
+      }
     }
 
     @include breakpoint(90em) {
-      font-size: 5.5rem;
+      font-size: 6rem;
+    }
+
+    @include breakpoint(100em) {
+      font-size: 6.5rem;
     }
 
     strong {
       color: $sd-blue;
       font-weight: 900;
+      font-size: 120%;
     }
   }
 
@@ -110,27 +201,55 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
     img {
       flex: 0 0 auto;
       max-height: 10rem;
       margin-right: 1rem;
+
+      @include breakpoint(62em) {
+        max-height: 12rem;
+        margin-right: 1.5rem;
+      }
     }
 
-    h3 {
+    .sd-pkg-text {
       flex: 0 0 auto;
-      color: white;
-      font-size: 2rem;
-      line-height: 1;
-      margin-bottom: 2rem;
+      color: $sd-blue;
 
-      small {
-        font-size: 50%;
+      @include breakpoint(62em) {
+        flex: 1 1 0px;
+        color: white;
       }
 
-      @include breakpoint(48em) {
-        flex: 1 1 0px;
-        font-size: 3rem;
+      h3 {
+        font-size: 2rem;
+        line-height: 1;
+
+        @include breakpoint(62em) {
+          font-size: 3rem;
+        }
+
+        small {
+          font-size: 60%;
+        }
+      }
+
+      p {
+        font-weight: 500;
+        line-height: 1.2;
+
+        span {
+          font-weight: normal;
+          text-decoration: line-through;
+        }
+
+        strong {
+          font-weight: 700;
+          font-size: 125%;
+          color: $sd-blue;
+        }
       }
     }
   }

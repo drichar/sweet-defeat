@@ -8,14 +8,24 @@
   transition: background-color 0.15s cubic-bezier(0.42, 0, 0.58, 1);
 
   @include breakpoint(62em) {
-    opacity: 0;
-    transition: opacity 0.15s cubic-bezier(0.42, 0, 0.58, 1);
+    transform: translateY(-100%);
+    transition: transform 0.15s cubic-bezier(0.42, 0, 0.58, 1);
     pointer-events: none;
   }
 
   .container {
     @include breakpoint(62em) {
       max-width: 100em;
+    }
+  }
+
+  .navbar {
+    padding: 0 1rem;
+
+    .navbar-brand {
+      .sd-logo {
+        width: 5rem;
+      }
     }
   }
 
@@ -26,7 +36,7 @@
 
   &.sd-header-scroll-lg {
     @include breakpoint(62em) {
-      opacity: 1;
+      transform: translateY(0);
       pointer-events: all;
     }
   }

@@ -1,6 +1,11 @@
 .btn {
   padding-left: 2rem;
   padding-right: 2rem;
+  font-weight: 700;
+
+  &.btn-secondary {
+    color: white;
+  }
 }
 
 img {

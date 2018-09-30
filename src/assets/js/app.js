@@ -4,6 +4,7 @@ import 'bootstrap'
 
 
 const header = document.querySelector('.sd-header');
+const hero = document.querySelector('.sd-hero');
 
 function debounce(func, wait) {
   let timeout;
@@ -16,9 +17,11 @@ function debounce(func, wait) {
 
 function onScroll() {
   let currScrollTop = window.scrollY;
-  let isScrolling = currScrollTop > 0;
+  let isScrollingSm = currScrollTop > 0;
+  let isScrollingLg = currScrollTop > hero.offsetHeight;
 
-  header.classList.toggle('sd-header-scroll', isScrolling);
+  header.classList.toggle('sd-header-scroll-sm', isScrollingSm);
+  header.classList.toggle('sd-header-scroll-lg', isScrollingLg);
 }
 
 window.addEventListener('scroll', debounce(onScroll, 16));
