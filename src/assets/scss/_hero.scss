@@ -2,7 +2,7 @@
   padding: 6rem 0 3rem;
   background: radial-gradient(ellipse at center, rgba($sd-blue-1,1) 0%,rgba($sd-blue-4,1) 100%);
 
-  @include breakpoint(64em) {
+  @include breakpoint(62em) {
     background: $gray-100 url('../../assets/img/hero.jpg') center center;
     background-size: cover;
   }
@@ -248,7 +248,7 @@
         strong {
           font-weight: 700;
           font-size: 125%;
-          color: $sd-blue;
+          color: $sd-green;
         }
       }
     }
