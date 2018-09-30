@@ -3,6 +3,10 @@
 
   .container {
     padding: 0;
+
+    @media (max-width: 62em) {
+      max-width: none;
+    }
   }
 
   .sd-steps-grid {
@@ -14,6 +18,10 @@
     }
 
     @include breakpoint(62em) {
+      grid-template: auto / repeat(3, 1fr);
+    }
+
+    @include breakpoint(100em) {
       grid-template: auto / repeat(4, 1fr);
     }
 
@@ -36,8 +44,23 @@
 
       &.sd-steps-step1 {
         background: $sd-blue;
+        text-align: center;
 
-        h2 {
+        @include breakpoint(48em) {
+          text-align: left;
+        }
+
+        @include breakpoint(62em) {
+          grid-column: 1 / -1;
+          text-align: center;
+        }
+
+        @include breakpoint(100em) {
+          grid-column: 1 / 1;
+          text-align: left;
+        }
+
+        strong {
           font-weight: 700;
         }
       }
