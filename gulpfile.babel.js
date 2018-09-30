@@ -73,6 +73,7 @@ function sass() {
 }
 
 let webpackConfig = {
+  mode: 'none',
   module: {
     rules: [
       {
