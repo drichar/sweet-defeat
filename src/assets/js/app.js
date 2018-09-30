@@ -3,6 +3,9 @@ window.$ = $
 import 'bootstrap'
 
 
+/**
+ * Scrolling menu behavior
+ */
 const header = document.querySelector('.sd-header')
 const hero = document.querySelector('.sd-hero')
 
@@ -25,3 +28,11 @@ function onScroll() {
 }
 
 window.addEventListener('scroll', debounce(onScroll, 16))
+
+
+/**
+ * Stop video playback when modal is closed
+ */
+$('.modal').on('hidden.bs.modal', function (e) {
+  $('.modal iframe').attr('src', $('.modal iframe').attr('src'));
+});
