@@ -1,15 +1,82 @@
 .sd-hero {
-  min-height: 100vh;
   padding: 6rem 0 3rem;
   background: radial-gradient(ellipse at center, rgba($sd-blue-2,1) 0%,rgba($sd-blue-4,1) 100%);
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
 
   @include breakpoint(48em) {
     background: $gray-100 url('../../assets/img/hero.jpg') center center;
     background-size: cover;
+  }
+
+  @include breakpoint(62em) {
+    padding: 3rem 0;
+  }
+
+  @include breakpoint(80em) {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    @include breakpoint(62em) {
+      max-width: 100em;
+    }
+  }
+
+  .sd-hero-grid {
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 3rem 0;
+
+    @include breakpoint(62em) {
+      grid-template: auto / 1fr auto;
+    }
+  }
+
+  .sd-hero-grid-text {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .sd-hero-grid-form {
+    .sd-form {
+      display: grid;
+      grid-template: auto 1fr / 1fr;
+      max-width: 32rem;
+      margin: 0 auto;
+
+      .sd-form-topper {
+        background: $primary;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        h4 {
+          color: white;
+          text-transform: uppercase;
+          margin: 0;
+        }
+      }
+
+      form {
+        background-color: #eee;
+        padding: 1rem;
+
+        @include breakpoint(80em) {
+          width: 20rem;
+        }
+
+        .btn {
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+    }
   }
 
   h1 {

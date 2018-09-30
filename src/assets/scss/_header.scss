@@ -7,19 +7,25 @@
   background-color: transparent;
   transition: background-color 0.15s cubic-bezier(0.42, 0, 0.58, 1);
 
-  .btn {
+  @include breakpoint(62em) {
+    opacity: 0;
+    transition: opacity 0.15s cubic-bezier(0.42, 0, 0.58, 1);
+    pointer-events: none;
+  }
+
+  .container {
     @include breakpoint(62em) {
-      opacity: 0;
-      transition: opacity 0.15s cubic-bezier(0.42, 0, 0.58, 1);
-      pointer-events: none;
+      max-width: 100em;
     }
   }
 
-  &.sd-header-scroll {
+  &.sd-header-scroll-sm {
     background-color: white;
     box-shadow: 0 1px 2px 0 hsla(0,0,0,.15);
+  }
 
-    .btn {
+  &.sd-header-scroll-lg {
+    @include breakpoint(62em) {
       opacity: 1;
       pointer-events: all;
     }
