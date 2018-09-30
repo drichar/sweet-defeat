@@ -1,13 +1,121 @@
 .sd-ingredients {
   padding: 4rem 0;
 
-  .container {
-    // TEMP: For demo only
-    display: flex;
-    justify-content: flex-start;
+  h2 {
+    text-align: center;
+    color: $sd-blue;
+    font-weight: 700;
+    margin-bottom: 2rem;
 
-    img {
-      max-height: 30em;
+    @include breakpoint(23em) {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint(48em) {
+      font-size: 4vw;
+    }
+
+    @include breakpoint(62em) {
+      font-size: 3.75vw;
+    }
+
+    @include breakpoint(80em) {
+      font-size: 3.375vw;
+    }
+
+    @include breakpoint(120em) {
+      font-size: 4rem;
+    }
+  }
+
+  .sd-ingredients-grid {
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 1rem;
+
+    @include breakpoint(36em) {
+      grid-template: auto / repeat(2, 1fr);
+      grid-gap: 0 1rem;
+    }
+
+    @include breakpoint(62em) {
+      grid-template: auto / auto 1fr;
+    }
+  }
+
+  .sd-ingredients-cell {
+    &.sd-ingredients-img {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+
+      @include breakpoint(36em) {
+        grid-column: auto;
+        grid-row: 1 / 4;
+        max-width: none;
+        margin: 0;
+      }
+
+      img {
+        max-width: 15rem;
+        margin: 0 auto;
+
+        @include breakpoint(48em) {
+          max-width: none;
+          margin: 0;
+        }
+      }
+    }
+
+    &.sd-ingredients-text {
+      display: flex;
+      flex-flow: column;
+
+      .sd-ingredients-title {
+        font-size: 1.5rem;
+
+        @include breakpoint(36em) {
+          font-size: 1rem;
+        }
+
+        @include breakpoint(48em) {
+          font-size: 1.5rem;
+        }
+
+        @include breakpoint(62em) {
+          font-size: 2rem;
+        }
+      }
+
+      .sd-ingredients-description {
+        @include breakpoint(62em) {
+          font-size: 1.25rem;
+        }
+      }
+
+      &.sd-ingredients-1 {
+        justify-content: flex-end;
+
+        .sd-ingredients-title {
+          color: $sd-green;
+        }
+      }
+
+      &.sd-ingredients-2 {
+        justify-content: center;
+
+        .sd-ingredients-title {
+          color: $gray-400;
+        }
+      }
+
+      &.sd-ingredients-3 {
+        justify-content: flex-start;
+
+        .sd-ingredients-title {
+          color: #5acbbf;
+        }
+      }
     }
   }
 }
