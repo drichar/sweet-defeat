@@ -13,6 +13,10 @@
       flex-flow: column;
       align-items: flex-start;
       justify-content: center;
+
+      .sd-product-hands {
+        width: 100%;
+      }
     }
 
     @include breakpoint(48em) {
