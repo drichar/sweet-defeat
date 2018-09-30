@@ -34,9 +34,11 @@ window.addEventListener('scroll', debounce(onScroll, 16));
  * Jump to form on Order Now click
  */
 (function() {
-  $('.sd-btn-order').click(function(e) {
+  $('.sd-btn-order').click((e) => {
     e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    const offset = $('.sd-form').offset();
+    const pos = offset.top - 80;
+    $('html, body').animate({ scrollTop: pos }, 'slow');
     $('#sdFullName').focus();
   });
 })();
@@ -46,7 +48,7 @@ window.addEventListener('scroll', debounce(onScroll, 16));
  * Stop video playback when modal is closed
  */
 (function() {
-  $('.modal').on('hidden.bs.modal', function (e) {
+  $('.modal').on('hidden.bs.modal', (e) => {
     $('.modal iframe').attr('src', $('.modal iframe').attr('src'));
   });
 })();
