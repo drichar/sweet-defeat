@@ -2,6 +2,8 @@
 
 ## Project setup
 ```
+git clone https://github.com/drichar/sweet-defeat.git
+cd sweet-defeat
 npm install
 ```
 
